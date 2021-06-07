@@ -1,16 +1,18 @@
 import firebase from "firebase/app";
 import "firebase/auth";
-import 'firebase/firestore';
+import "firebase/firestore";
 
+const client_key=process.env.REACT_APP_apiKey;
+console.log(client_key)
 export const auth = firebase
   .initializeApp({
-    apiKey: "AIzaSyCLhlY_fCaH7F6HV8ACNVzDI2_fN1iRzgM",
-    authDomain: "firechat-8c318.firebaseapp.com",
-    projectId: "firechat-8c318",
-    storageBucket: "firechat-8c318.appspot.com",
-    messagingSenderId: "466299700375",
-    appId: "1:466299700375:web:46bcaf69d64eb6719a95d2",
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
   })
   .auth();
 
-export const firestore=firebase.firestore()
+export const firestore = firebase.firestore();
